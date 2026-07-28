@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="VULK builds privacy-first public-safety systems with auditability at the center."
+    />
+    <title>VULK | Surveillance you can audit.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <nav class="nav" aria-label="Primary">
+            <a class="brand" href="/" aria-label="VULK home">
+              <span class="brand-mark" aria-hidden="true"></span>
+              <span>VULK</span>
+            </a>
+            <a class="nav-cta" href="#waitlist">Join waitlist</a>
+          </nav>
+
+          <div class="hero-content">
+            <p class="eyebrow">Privacy-first public safety</p>
+            <h1 id="hero-title">Surveillance you can audit.</h1>
+            <p class="mission">
+              VULK is building accountable smart-surveillance infrastructure
+              for safer public spaces without sacrificing civil liberties.
+            </p>
+            <p class="watcher">The eye that watches the watchers.</p>
+
+            <form
+              id="waitlist"
+              class="waitlist-form"
+              action="https://formspree.io/f/your-form-id"
+              method="post"
+            >
+              <!-- TODO: Replace the placeholder action with your Formspree form or Cloudflare Pages Function endpoint. -->
+              <label for="email">Request early access</label>
+              <div class="field-row">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="founder@company.com"
+                  required
+                />
+                <button type="submit">Join</button>
+              </div>
+              <p class="form-note">
+                Front-end waitlist placeholder. Prefer email?
+                <a href="mailto:hello@vulk.ai?subject=VULK%20waitlist">hello@vulk.ai</a>
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="VULK electric-eye surveillance camera">
+          <img src="vulk_hero.png" alt="" />
+          <div class="scanline" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="signal-band" aria-labelledby="principles-title">
+        <div class="section-inner">
+          <div>
+            <p class="eyebrow">Built for accountable deployment</p>
+            <h2 id="principles-title">Public-safety tooling should be inspectable by design.</h2>
+          </div>
+          <div class="principles">
+            <article>
+              <span>01</span>
+              <h3>Auditable capture</h3>
+              <p>Clear retention policies, operator accountability, and traceable system actions.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Edge-first intelligence</h3>
+              <p>On-device perception pipelines designed to reduce unnecessary data movement.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Human-centered oversight</h3>
+              <p>Interfaces that help teams review decisions, limits, and exceptions with care.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="hiring" aria-labelledby="hiring-title">
+        <div class="section-inner hiring-grid">
+          <div>
+            <p class="eyebrow amber">Founding team hiring</p>
+            <h2 id="hiring-title">Help set the standard for privacy-first safety systems.</h2>
+          </div>
+          <div class="roles">
+            <p>
+              We are looking for founding CV / edge-AI engineers and a GTM lead
+              who can work with public-sector, enterprise, and community
+              stakeholders from first principles.
+            </p>
+            <a class="dm-cta" href="mailto:hello@vulk.ai?subject=Founding%20team%20interest">
+              DM us
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const form = document.querySelector(".waitlist-form");
+
+      form.addEventListener("submit", () => {
+        form.classList.add("is-submitting");
+      });
+    </script>
+  </body>
+</html>

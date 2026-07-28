@@ -5,123 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="VULK builds privacy-first public-safety systems with auditability at the center."
+      content="VULK is building governable, edge-first intelligence for public safety—bounded retention, visible audit trails, and human-authorized action."
     />
-    <title>VULK | Surveillance you can audit.</title>
+    <meta name="theme-color" content="#08090c" />
+    <meta property="og:title" content="VULK | Public safety without the black box." />
+    <meta
+      property="og:description"
+      content="Governable public-safety intelligence with policy enforced in software."
+    />
+    <meta property="og:image" content="https://cardoza1991.github.io/vulk-landing/vulk_hero.png" />
+    <title>VULK | Public safety without the black box.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="page-shell">
-      <section class="hero" aria-labelledby="hero-title">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="VULK home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>VULK</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#principles">Principles</a>
+        <a href="#boundaries">Boundaries</a>
+        <a class="nav-cta" href="mailto:hello@vulk.ai?subject=VULK%20design%20partner">
+          Design partner
+        </a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <div class="hero-image" aria-hidden="true">
+          <img src="vulk_hero.png" alt="" />
+          <span class="scanline"></span>
+        </div>
+
         <div class="hero-copy">
-          <nav class="nav" aria-label="Primary">
-            <a class="brand" href="/" aria-label="VULK home">
-              <span class="brand-mark" aria-hidden="true"></span>
-              <span>VULK</span>
+          <p class="eyebrow">Governable intelligence for public safety</p>
+          <h1 id="hero-title">Public safety without the black box.</h1>
+          <p class="hero-lede">
+            VULK is an edge-first intelligence platform built to help agencies detect,
+            review, and respond—without turning every camera into a permanent dragnet.
+          </p>
+          <p class="hero-proof">
+            Policy enforced in software. Consequential action stays human-authorized.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-cta" href="mailto:hello@vulk.ai?subject=VULK%20design%20partner">
+              Become a design partner
             </a>
-            <a class="nav-cta" href="#waitlist">Join waitlist</a>
-          </nav>
-
-          <div class="hero-content">
-            <p class="eyebrow">Privacy-first public safety</p>
-            <h1 id="hero-title">Surveillance you can audit.</h1>
-            <p class="mission">
-              VULK is building accountable smart-surveillance infrastructure
-              for safer public spaces without sacrificing civil liberties.
-            </p>
-            <p class="watcher">The eye that watches the watchers.</p>
-
-            <form
-              id="waitlist"
-              class="waitlist-form"
-              action="https://formspree.io/f/your-form-id"
-              method="post"
-            >
-              <!-- TODO: Replace the placeholder action with your Formspree form or Cloudflare Pages Function endpoint. -->
-              <label for="email">Request early access</label>
-              <div class="field-row">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  placeholder="founder@company.com"
-                  required
-                />
-                <button type="submit">Join</button>
-              </div>
-              <p class="form-note">
-                Front-end waitlist placeholder. Prefer email?
-                <a href="mailto:hello@vulk.ai?subject=VULK%20waitlist">hello@vulk.ai</a>
-              </p>
-            </form>
+            <a class="text-cta" href="#principles">See the operating model <span>↓</span></a>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="VULK electric-eye surveillance camera">
-          <img src="vulk_hero.png" alt="" />
-          <div class="scanline" aria-hidden="true"></div>
-        </div>
+        <ul class="control-strip" aria-label="Core controls">
+          <li><span>01</span> Edge processed</li>
+          <li><span>02</span> Retention bounded</li>
+          <li><span>03</span> Actions logged</li>
+          <li><span>04</span> Humans authorize</li>
+        </ul>
       </section>
 
-      <section class="signal-band" aria-labelledby="principles-title">
-        <div class="section-inner">
-          <div>
-            <p class="eyebrow">Built for accountable deployment</p>
-            <h2 id="principles-title">Public-safety tooling should be inspectable by design.</h2>
-          </div>
-          <div class="principles">
+      <section id="principles" class="principles" aria-labelledby="principles-title">
+        <div class="section-label">
+          <p class="eyebrow">Governance is infrastructure</p>
+          <p class="section-index">01 / OPERATING MODEL</p>
+        </div>
+        <div class="principles-content">
+          <h2 id="principles-title">The rules should ship with the system.</h2>
+          <div class="rule-list">
             <article>
               <span>01</span>
-              <h3>Auditable capture</h3>
-              <p>Clear retention policies, operator accountability, and traceable system actions.</p>
+              <div>
+                <h3>Collect for a defined purpose</h3>
+                <p>Deployments begin with an explicit mission, approved signals, and visible limits—not open-ended collection.</p>
+              </div>
             </article>
             <article>
               <span>02</span>
-              <h3>Edge-first intelligence</h3>
-              <p>On-device perception pipelines designed to reduce unnecessary data movement.</p>
+              <div>
+                <h3>Process close to the source</h3>
+                <p>Edge-first perception reduces unnecessary data movement and keeps useful decisions available when networks degrade.</p>
+              </div>
             </article>
             <article>
               <span>03</span>
-              <h3>Human-centered oversight</h3>
-              <p>Interfaces that help teams review decisions, limits, and exceptions with care.</p>
+              <div>
+                <h3>Make every action reviewable</h3>
+                <p>Searches, exports, policy exceptions, and operator actions produce a traceable record for authorized oversight.</p>
+              </div>
+            </article>
+            <article>
+              <span>04</span>
+              <div>
+                <h3>Keep authority with people</h3>
+                <p>The system can surface evidence and recommend next steps. People remain accountable for consequential decisions.</p>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="hiring" aria-labelledby="hiring-title">
-        <div class="section-inner hiring-grid">
+      <section id="boundaries" class="boundaries" aria-labelledby="boundaries-title">
+        <div class="boundaries-heading">
+          <p class="eyebrow amber">A product with boundaries</p>
+          <h2 id="boundaries-title">Useful intelligence.<br />Deliberate limits.</h2>
+        </div>
+
+        <div class="boundary-columns">
           <div>
-            <p class="eyebrow amber">Founding team hiring</p>
-            <h2 id="hiring-title">Help set the standard for privacy-first safety systems.</h2>
+            <p class="column-label good">VULK is designed to</p>
+            <ul>
+              <li>Detect defined public-safety events from approved sensor feeds</li>
+              <li>Enforce deployment-specific retention and access policy</li>
+              <li>Work locally when cloud connectivity is constrained</li>
+              <li>Give operators and oversight teams a shared audit trail</li>
+            </ul>
           </div>
-          <div class="roles">
-            <p>
-              We are looking for founding CV / edge-AI engineers and a GTM lead
-              who can work with public-sector, enterprise, and community
-              stakeholders from first principles.
-            </p>
-            <a class="dm-cta" href="mailto:hello@vulk.ai?subject=Founding%20team%20interest">
-              DM us
-            </a>
+          <div>
+            <p class="column-label limit">VULK is not designed to</p>
+            <ul>
+              <li>Create a limitless, centralized archive by default</li>
+              <li>Hide searches, exports, exceptions, or operator actions</li>
+              <li>Make consequential enforcement decisions autonomously</li>
+              <li>Treat privacy and civil liberties as policy paperwork</li>
+            </ul>
           </div>
+        </div>
+      </section>
+
+      <section class="partner" aria-labelledby="partner-title">
+        <p class="section-index">02 / DESIGN PARTNERS</p>
+        <h2 id="partner-title">Build the standard before the standard builds itself.</h2>
+        <p>
+          We want agencies, infrastructure operators, technologists, and community
+          stakeholders in the room early. If you are unwilling to choose between useful
+          public-safety tools and enforceable civil-liberties protections, we should talk.
+        </p>
+        <div class="partner-actions">
+          <a class="primary-cta amber-cta" href="mailto:hello@vulk.ai?subject=VULK%20design%20partner">
+            Start a design-partner conversation
+          </a>
+          <a class="text-cta" href="mailto:hello@vulk.ai?subject=VULK%20founding%20team">
+            Join the founding team <span>↗</span>
+          </a>
         </div>
       </section>
     </main>
 
-    <script>
-      const form = document.querySelector(".waitlist-form");
-
-      form.addEventListener("submit", () => {
-        form.classList.add("is-submitting");
-      });
-    </script>
+    <footer>
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>VULK</span>
+      </a>
+      <p>Governable intelligence for public safety.</p>
+      <a href="mailto:hello@vulk.ai">hello@vulk.ai</a>
+    </footer>
   </body>
 </html>

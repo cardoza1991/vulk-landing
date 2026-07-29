@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A static synthetic VULK governance console demo showing policy review, human authorization, audit records, and transparency export."
+    />
+    <meta name="theme-color" content="#08090c" />
+    <title>VULK | Governance Console Demo</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23080a0e'/%3E%3Cpath d='M8 8 56 56' stroke='%232dd4e7' stroke-width='10'/%3E%3Cpath d='M56 8 8 56' stroke='%23f5a524' stroke-width='10'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="demo.css" />
+    <script src="demo.js" defer></script>
+  </head>
+  <body class="demo-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="demo-shell-header" aria-labelledby="demo-title">
+      <div>
+        <a class="brand" href="./" aria-label="VULK site">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>VULK</span>
+        </a>
+        <p class="demo-kicker">DEMO / SYNTHETIC DATA</p>
+        <h1 id="demo-title">VULK Governance Console</h1>
+      </div>
+      <div class="demo-status-panel" aria-label="Scenario controls">
+        <dl>
+          <div>
+            <dt>Fictional deployment</dt>
+            <dd>North River Water Utility</dd>
+          </div>
+          <div>
+            <dt>Workflow state</dt>
+            <dd><span id="workflow-state" class="status-pill status-review">Operator review required</span></dd>
+          </div>
+        </dl>
+        <div class="demo-header-actions">
+          <button id="reset-scenario" type="button" class="button button-secondary">Reset scenario</button>
+          <a class="button button-ghost" href="./">VULK site</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="demo-console">
+      <section class="demo-notice" aria-label="Demo boundary">
+        <strong>Synthetic public demonstration.</strong>
+        All events, facilities, operators, timestamps, evidence, and contacts are fictional. This static console does not use a backend, live camera feed, identity search, law-enforcement dispatch, or autonomous consequential action.
+      </section>
+
+      <section class="event-queue panel" aria-labelledby="queue-title">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">01 / SYNTHETIC EVENT QUEUE</p>
+            <h2 id="queue-title">Event queue</h2>
+          </div>
+          <span class="append-badge">No real images or identities</span>
+        </div>
+        <div id="event-list" class="event-list" role="list"></div>
+      </section>
+
+      <section class="policy-profile panel" aria-labelledby="policy-title">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">02 / DEPLOYMENT POLICY</p>
+            <h2 id="policy-title">Policy profile</h2>
+          </div>
+          <span class="status-pill status-locked">Human gate locked</span>
+        </div>
+        <div class="policy-grid">
+          <article>
+            <h3>Mission</h3>
+            <p id="policy-mission"></p>
+          </article>
+          <article>
+            <h3>Approved sources</h3>
+            <ul id="policy-sources"></ul>
+          </article>
+          <article>
+            <h3>Prohibited processing</h3>
+            <ul id="policy-prohibited"></ul>
+          </article>
+          <article>
+            <h3>Retention</h3>
+            <dl class="compact-dl">
+              <div>
+                <dt>Default</dt>
+                <dd id="policy-default-retention"></dd>
+              </div>
+              <div>
+                <dt>Escalated record</dt>
+                <dd id="policy-escalated-retention"></dd>
+              </div>
+            </dl>
+          </article>
+          <article>
+            <h3>Roles and authority</h3>
+            <dl class="compact-dl">
+              <div>
+                <dt>Export role</dt>
+                <dd id="policy-export-role"></dd>
+              </div>
+              <div>
+                <dt>Consequential action</dt>
+                <dd id="policy-human-gate"></dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="event-review panel" aria-labelledby="review-title">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">03 / OPERATOR REVIEW</p>
+            <h2 id="review-title">Event review</h2>
+          </div>
+          <span id="selected-disposition" class="status-pill">Requires review</span>
+        </div>
+        <div id="review-content" class="review-content"></div>
+        <div class="action-row" aria-label="Operator actions">
+          <button id="dismiss-event" type="button" class="button button-secondary">Dismiss as non-actionable</button>
+          <button id="request-review" type="button" class="button button-primary">Request supervisor review</button>
+        </div>
+      </section>
+
+      <section id="authorization-gate" class="authorization-gate panel" aria-labelledby="gate-title" hidden>
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">04 / HUMAN AUTHORIZATION GATE</p>
+            <h2 id="gate-title">Supervisor decision</h2>
+          </div>
+          <span class="status-pill status-amber">Accountable human required</span>
+        </div>
+        <p class="gate-warning">VULK cannot execute this action without an accountable human.</p>
+        <div class="gate-grid">
+          <article>
+            <h3>Requested action</h3>
+            <p>Notify fictional on-duty site security for North River Water Utility.</p>
+          </article>
+          <article>
+            <h3>Evidence available</h3>
+            <p id="gate-evidence"></p>
+          </article>
+          <article>
+            <h3>Policy basis</h3>
+            <p id="gate-policy"></p>
+          </article>
+          <article>
+            <h3>Retention consequence</h3>
+            <p>Supervisor decision creates an escalated controlled-demo record retained for 30 days.</p>
+          </article>
+        </div>
+        <div class="action-row" aria-label="Supervisor actions">
+          <button id="deny-action" type="button" class="button button-secondary">Deny authorization</button>
+          <button id="authorize-action" type="button" class="button button-primary amber-button">Authorize bounded notification</button>
+        </div>
+      </section>
+
+      <section class="audit-panel panel" aria-labelledby="audit-title">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">05 / APPEND-ONLY AUDIT TIMELINE</p>
+            <h2 id="audit-title">Audit timeline</h2>
+          </div>
+          <span class="append-badge">Append-only in this session</span>
+        </div>
+        <ol id="audit-timeline" class="audit-timeline"></ol>
+      </section>
+
+      <section class="export-panel panel" aria-labelledby="export-title">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">06 / TRANSPARENCY EXPORT</p>
+            <h2 id="export-title">Transparency record</h2>
+          </div>
+          <span class="status-pill status-locked">Supervisor export role</span>
+        </div>
+        <p class="export-copy">
+          The JSON export contains the demo disclaimer, fictional deployment name, policy profile, selected synthetic event, final disposition, complete audit records, and prohibited processing list.
+        </p>
+        <p id="export-status" class="export-copy" aria-live="polite">
+          Export unavailable: a supervisor must make a final authorize or deny decision.
+        </p>
+        <div class="action-row">
+          <button id="export-json" type="button" class="button button-primary" aria-describedby="export-status" disabled>Export JSON</button>
+          <a id="download-link" class="button button-secondary" href="#" download="vulk-transparency-record.json" hidden>Download record</a>
+        </div>
+        <pre id="export-preview" class="export-preview" tabindex="0">No export generated yet.</pre>
+      </section>
+    </main>
+  </body>
+</html>
